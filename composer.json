@@ -1,0 +1,54 @@
+{
+    "name": "maxtc/config-writer",
+    "description": "Save changes to the configuration file in script.",
+    "keywords": [
+        "maxtc",
+        "config-writer"
+    ],
+    "homepage": "https://github.com/maxtc/config-writer",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Maxtc",
+            "email": "m8911111@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maxtc\\ConfigWriter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Maxtc\\ConfigWriter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Maxtc\\ConfigWriter\\ConfigWriterServiceProvider"
+            ],
+            "aliases": {
+                "ConfigWriter": "Maxtc\\ConfigWriter\\ConfigWriterFacade"
+            }
+        }
+    }
+}
